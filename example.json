@@ -11,7 +11,8 @@
   "instruction": "Click on the game window below to begin.",
   "_source": "course/en/game/index.html",
   "_loadingImg": "course/en/game/loading.png",
-  "_originURL": "http://localhost:9001",
+  "height": "550",
+  "width": "400",
   "_scrolling": "no",
   "_pageLevelProgress": {
     "_isEnabled": true
