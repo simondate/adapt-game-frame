@@ -8,7 +8,6 @@ define([
   'core/js/views/componentView',
   'core/js/models/componentModel'
 ], function(Adapt, ComponentView, ComponentModel) {
-    var visited = false;
 
     var GameIframe = ComponentView.extend({
         events: {
@@ -19,22 +18,14 @@ define([
             var that = this;
             this.$('.gameIframe-iframe').ready(function() {
                 that.setReadyStatus();
+                window.addEventListener('message', that.gameComplete.bind(that), false);
             });
         },
 
         gameComplete: function(e) {
-          console.log(e.data)
-          console.log(this.model)
           if (e.data === this.model.get('_id')) {
             this.setCompletionStatus();
           }
-        },
-
-        inview: function(event, visible) {
-            if (visible && !visited) {
-              visited = true;
-              window.addEventListener('message', this.gameComplete.bind(this), false);
-            }
         }
 
     });
