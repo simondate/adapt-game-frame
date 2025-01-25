@@ -1,8 +1,9 @@
 {
   "name": "adapt-game-frame",
   "version": "1.1.0",
+  "framework": ">=5",
   "description": "An iframe compontent for HTML5 games.",
-  "main": "",
+  "main": "/js/adapt-game-frame.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/anthkris/adapt-game-frame.git"
@@ -12,4 +13,8 @@
   "bugs": {
     "url": "https://github.com/anthkris/adapt-game-frame/issues"
   },
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ]
 }
