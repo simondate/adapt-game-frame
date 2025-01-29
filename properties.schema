@@ -41,6 +41,40 @@
           "inputType": "Text",
           "validators": [],
           "help": "The alternative text for this image"
+        },
+        "_source": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Source",
+          "inputType": "Asset:other",
+          "validators": ["required"]
+        },
+        "_loadingImg": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Loading image",
+          "inputType": "Asset:image",
+          "validators": [],
+          "help": "Image displayed before the game is played"
+        },
+        "height": {
+          "type": "number",
+          "required": false,
+          "default": 550,
+          "title": "Height",
+          "inputType": "Number",
+          "validators": ["required", "number"],
+          "help": "Height of the game"
+        },
+        "_scrolling": {
+          "type": "boolean",
+          "default": false,
+          "title": "Allow scrolling",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Allow scrolling inside of the game"
         }
       }
     }
