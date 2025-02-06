@@ -59,7 +59,7 @@
           "validators": [],
           "help": "Image displayed before the game is played"
         },
-        "height": {
+        "_height": {
           "type": "number",
           "required": false,
           "default": 550,
