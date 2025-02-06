@@ -1,0 +1,186 @@
+canvas {
+  width: 100vw;
+}
+
+* {
+	text-align: center;
+	user-select: none;
+}
+
+body {
+	margin: 0px;
+	overflow: hidden;
+}
+.red {
+  font-size: 2rem;
+  color: #ee3442;
+  font-weight: 900;
+  padding:5px;
+}
+.timer-icon{
+  margin-left: 50px;
+}
+
+#timer{
+  padding: 5px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap');
+
+.a-img {
+  width: 100%;
+  background-image: url(assets/blackPaint.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  color: white;
+  font-size: 1.4rem;
+  padding-right: 20px;
+  padding-left: 5px;
+  font-family: 'Oswald', sans-serif;
+  padding-bottom:10px;
+
+}
+.progress-outer{
+padding: 15px 0px;
+  height: 20px;
+  font-size:1.6rem;
+}
+
+
+@media all and (max-width: 650px){
+  .a-img{
+    height:initial;
+    font-size:0.8rem;
+    bottom:5px;
+    padding-bottom:5px;
+  }
+
+  .red{
+    font-size: 0.8rem;
+    padding:0px 5px;
+  }
+  .timer-icon{
+    width:20px;
+    margin-left:20px;
+  }
+
+  .progress-outer{
+    padding: 5px;
+    height: 15px;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+.centered{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.counter {
+	position: absolute;
+	display: none;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100vw;
+	background-image: url("assets/cpr2.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.counter.active {
+	background-image: url("assets/cpr1.png");
+}
+.button {
+	display: block;
+	width: 100%;
+	font-family: verdana;
+	font-size: 3vw;
+	letter-spacing: 0.6vw;
+	cursor: pointer;
+	color: white;
+	border: none;
+}
+
+button:focus {
+	outline: none;
+}
+
+.tapTempo {
+	width: 20%;
+	height: 30%;
+	position: absolute;
+	display: inline-block;
+	left: 41.4%;
+	top: 29%;
+	background-color: transparent;
+	border-radius: 59%;
+	border: 5px dashed #ee3442;
+}
+
+/* .tapTempo:active {
+    animation: pulse 2s infinite;
+    transform: scale(1.1);
+    bottom: 48%;
+} */
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0px 0px 20px 6px #555252;
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0px 0px 20px 6px #555252;
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0px 0px 20px 6px #555252;
+	}
+}
+
+.reset {
+	background: rgb(220, 70, 66);
+	width: 20%;
+	position: absolute;
+	display: inline-block;
+	right: 0;
+	bottom: 38px;
+	box-shadow: 7px 7px 50px rgb(210, 60, 56) inset;
+}
+
+.reset:active {
+	background: rgb(187, 58, 54);
+}
+
+.popup1 {
+	width: 50%;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	font-family: "Oswald", sans-serif;
+	font-size: 2rem;
+  padding: 20px;
+  position:absolute;
+  left:50%;
+  bottom:50%;
+}
+
+/* .start-button{
+  padding: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  position: relative !important;
+  line-height: 1.5;
+  background-color: #ee3242;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 0px;
+} */

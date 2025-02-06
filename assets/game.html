@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Game</title>
+        <link href="game-style.css" rel="stylesheet" type="text/css" />
+        <script src="//cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        <script src="game-script.js"></script>
+    </head>
+    <body>
+        <div id="phaser-example"></div>
+          <!-- <button id="start-button">Begin Game</button> -->
+        </div>
+        <div class="counter">
+          <div class="a-img">
+            <div class="progress-outer"><div class='progress'></div></div>
+            <div class='centered'>
+            <span class='red'>BPM</span> <div class="bpm"> - </div>
+            <img class='timer-icon' src='assets/timer-icon.png'/><span id="timer"></span>
+          </div>
+          </div>
+            <button class="button tapTempo" onclick="beatsPerMinute.show()">
+            </button>
+            <!-- <button class="button reset" onclick="beatsPerMinute.reset()">
+                RESET
+            </button> -->
+        </div>
+
+        <script>
+
+
+            // BPM Counter
+
+            let prevTime = 0;
+            let countClicks = 0;
+            let currentTime = 0;
+            let bpm = 0;
+            let timeDifference = 0;
+            let bpmTotal = 0;
+            let bpmFinal = 0;
+
+
+            let beatsPerMinute = {
+                show: function () {
+                    if (prevTime === 0) {
+                        prevTime = Date.now();
+                    } else if (Date.now() - prevTime > 2200) {
+                        this.reset();
+                    } else {
+                        currentTime = Date.now();
+                        timeDifference = currentTime - prevTime;
+                        prevTime = currentTime;
+                        bpm = 60 / timeDifference;
+                        bpmTotal = bpmTotal + bpm;
+                        countClicks++;
+                        bpmFinal = (bpmTotal / countClicks) * 1000;
+
+
+//                         var tapSeconds = new Date().getTime();
+
+// bpm = ((1 / ((tapSeconds - lastTapSeconds) / 1000)) * 60);
+// lastTapSeconds = tapSeconds;
+
+                        let result = document.querySelector(".bpm");
+                        result.innerHTML = bpmFinal.toFixed(0);
+                        if (bpmFinal < 100) {
+                            document.querySelector(".progress").innerHTML =
+                                "Go faster!";
+                        } else if (bpmFinal > 120) {
+                            document.querySelector(".progress").innerHTML =
+                                "Slow down!";
+                        } else {
+                            document.querySelector(".progress").innerHTML =
+                                "Doing well. Keep the pace!";
+                        }
+                    }
+
+                    $(".counter").addClass("active");
+                    setTimeout(() => { $(".counter").removeClass("active"); }, 250);
+                },
+                reset: function () {
+                    prevTime = 0;
+                    bpm = 0;
+                    bpmTotal = 0;
+                    bpmFinal = 0;
+                    countClicks = 0;
+
+                    let result = document.querySelector(".bpm");
+                    result.innerHTML = '-';
+
+                },
+            };
+
+
+        </script>
+    </body>
+</html>
