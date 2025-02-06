@@ -51,15 +51,6 @@
           "validators": [],
           "help": "Image displayed before the game is played"
         },
-        "_height": {
-          "type": "number",
-          "required": false,
-          "default": 550,
-          "title": "Height",
-          "inputType": "Number",
-          "validators": ["required", "number"],
-          "help": "Height of the game"
-        },
         "_scrolling": {
           "type": "boolean",
           "default": false,
