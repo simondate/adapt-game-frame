@@ -29,7 +29,7 @@ body {
 
 .a-img {
   width: 100%;
-  background-image: url(assets/blackPaint.png);
+  background-image: url('blackpaint.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center bottom;
@@ -87,12 +87,12 @@ padding: 15px 0px;
 	left: 0px;
 	height: 100%;
 	width: 100vw;
-	background-image: url("assets/cpr2.png");
+	background-image: url("cpr2.png");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 .counter.active {
-	background-image: url("assets/cpr1.png");
+	background-image: url("cpr1.png");
 }
 .button {
 	display: block;
