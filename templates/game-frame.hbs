@@ -3,9 +3,9 @@
   {{> component this}}
   <div class="component__widget gameIframe__widget">
     <div class="gameIframe-iframe-holder">
-      <iframe scrolling="{{#if _scrolling}}{{_scrolling}}{{else}}no{{/if}}" class="gameIframe-iframe" src="assets/game.html" style="height:545px; width:100%">
-      </iframe>
-      <!-- <object type="text/html" data="" class="gameIframe-object"></object> -->
+      {{!-- <iframe scrolling="{{#if _scrolling}}{{_scrolling}}{{else}}no{{/if}}" class="gameIframe-iframe" src="assets/game.html" style="height:100%; width:100%; min-height: 350px;">
+      </iframe> --}}
+      <object type="text/html" data="assets/game.html" class="gameIframe-object"></object>
     </div>
   </div>
 </div>
